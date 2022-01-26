@@ -1,2 +1,2 @@
 #!/bin/bash
-find . -iname '*html' -type f cp * .. -a
+find ./ -iname '*html' -type f cp * .. -a
