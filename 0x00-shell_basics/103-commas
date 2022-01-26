@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -al tr '/n'
+ls -al -p | grep -v | tr '/n'
