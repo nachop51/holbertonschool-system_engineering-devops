@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -al -p tr '/n'
+ls -al tr */n
