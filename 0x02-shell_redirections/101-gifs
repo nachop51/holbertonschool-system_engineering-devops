@@ -1,2 +1,2 @@
 #!/bin/bash
-
+ls -S1a | find . -type f -iname '*.gif' -printf "%f\n" | sed "s/.*\///; s/\.ipynb//" | sort -d
