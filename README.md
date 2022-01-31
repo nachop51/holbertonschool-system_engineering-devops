@@ -1,1 +1,1 @@
-**Script**
+**Shell scripts for HOLBERTON SCHOOL**

@@ -1,1 +1,1 @@
-**Shell scripts**
+**First shell project, learning basics**
