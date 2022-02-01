@@ -1,2 +1,2 @@
 #!/bin/bash
-perl -ne 'print if($.%2)' 
+cat -n | cut -b 6- | grep ^[13579] | cut -f2
