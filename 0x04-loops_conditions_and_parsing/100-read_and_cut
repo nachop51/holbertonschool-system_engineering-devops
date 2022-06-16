@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# Bash script that displays the content of the file /etc/passwd
 FILE="/etc/passwd"
 while read -r line
 do
