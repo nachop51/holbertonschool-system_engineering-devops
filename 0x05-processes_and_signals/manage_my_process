@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Bash script that: Indefinitely writes I am alive! to the file /tmp/my_process
+while true
+do
+	sudo bash -c "echo 'I am alive!' >> '/tmp/my_process'"
+done
