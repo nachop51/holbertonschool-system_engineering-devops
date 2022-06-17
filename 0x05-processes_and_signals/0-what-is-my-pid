@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Gets the Process ID
+echo "$$"
