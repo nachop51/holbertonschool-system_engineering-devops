@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Pings a given IP 5 times
+
+if [ ! -z "$1" ]
+then
+    ping -c 5 $1
+else
+    echo "Usage: $0 {IP_ADDRESS}"
+fi
