@@ -3,4 +3,4 @@
 # localhost resolves to 127.0.0.2
 # facebook.com resolves to 8.8.8.8
 
-echo -e "127.0.0.2\tlocalhost\n8.8.8.8\tfacebook\n" > /etc/hosts
+echo -e "127.0.0.2\tlocalhost\n8.8.8.8\tfacebook.com\n" > /etc/hosts
