@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Creates a configuration file
+Host 34.227.46.143
+	PasswordAuthentication no
+	IndetityFile ~/.ssh/school
+
