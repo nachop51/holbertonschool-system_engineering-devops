@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# install nginx and set the route / to return Hello World
+
+apt-get update
+apt-get install nginx -y
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+service nginx start
