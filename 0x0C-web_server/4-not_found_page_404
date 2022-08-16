@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# install nginx and set the route / to return Hello World
+apt-get update
+apt-get install nginx -y
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+sed -i "/root \/var\/www\/html;/a error_page 404 \/error_page.html;\nlocation = /error_page.html {\nroot \/usr\/share\/nginx\/html;\ninternal;\n}" /etc/nginx/sites-available/default
+service nginx start
