@@ -3,5 +3,5 @@
 
 apt-get update
 apt-get install nginx -y
-echo "Hello World" > /var/www/html/index.nginx-debian.html
+sed -i -e "s/location \//location \/redirect_me/" -e "s/try_files \$uri \$uri\/ =404/rewrite ^\/redirect_me$ https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent/" /etc/nginx/sites-available/default
 service nginx start
