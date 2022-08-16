@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 # install nginx and set the route / to return Hello World
-text=" rewrite ^\/redirect_me$ https:\/\/www.youtube.com\/watch?v=QH2-TGUlwu4 permanent;"
-
 apt-get update
 apt-get install nginx -y
-sed -i "/listen \[::\]:80 default_server;/a $text" /etc/nginx/sites-available/default
+echo "Hello World" > /var/www/html/index.nginx-debian.html
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 service nginx start
