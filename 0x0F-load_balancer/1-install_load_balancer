@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Configure HAproxy so that it send traffic to web-01 and web-02
+# Distribute requests using a roundrobin algorithm
+apt-get update
+apt-get install --no-install-recommends software-properties-common -y
+add-apt-repository ppa:vbernat/haproxy-2.0 -y
+apt-get install haproxy -y
+sed -i "/errors\/504.http/a listen http-incoming\n\tmode http\n\tbalance roundrobin\n\tbind :80\n\toption forwardfor\n\tserver 4386-web-01 34.227.46.143\n\tserver 4386-web-02 18.234.112.14" /etc/haproxy/haproxy.cfg
+service haproxy start
