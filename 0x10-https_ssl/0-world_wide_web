@@ -7,7 +7,7 @@ parse () {
     res="$(dig "$domain" | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $1,$4,$5}')"
     record="$(echo "$res" | awk '{print $2}')"
     ip="$(echo "$res" | awk '{print $3}')"
-    printf "The subdomain %s is a %s record and points to %s \n" "$subdomain" "$record" "$ip"
+    printf "The subdomain %s is a %s record and points to %s\n" "$subdomain" "$record" "$ip"
 }
 
 if [ $# -eq 2 ]
