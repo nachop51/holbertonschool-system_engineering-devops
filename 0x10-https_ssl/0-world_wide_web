@@ -2,14 +2,8 @@
 # Bash script that displays information about the subdomain and domain name
 
 parse () {
-    if [ -z "$2" ]
-    then
-        domain="www.$1"
-        subdomain="www"
-    else
-        domain="$2.$1"
-        subdomain="$2"
-    fi
+    domain="$2.$1"
+    subdomain="$2"
     res="$(dig "$domain" | grep -A1 'ANSWER SECTION:' | awk 'NR==2 {print $1,$4,$5}')"
     record="$(echo "$res" | awk '{print $2}')"
     ip="$(echo "$res" | awk '{print $3}')"
@@ -21,5 +15,8 @@ then
     parse "$1" "$2"
 elif [ $# -eq 1 ]
 then
-    parse "$1"
+    parse "$1" "www"
+    parse "$1" "lb-01"
+    parse "$1" "web-01"
+    parse "$1" "web-02"
 fi
