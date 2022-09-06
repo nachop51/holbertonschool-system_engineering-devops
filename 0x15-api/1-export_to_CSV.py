@@ -3,8 +3,8 @@
     Script that fetches the endpoint https://jsonplaceholder.typicode.com/
     And process the data
 """
-import sys
 import requests
+import sys
 
 
 if __name__ == '__main__':
