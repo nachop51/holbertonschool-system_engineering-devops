@@ -11,7 +11,7 @@ import sys
 if __name__ == '__main__':
     response = requests.get(
         'https://jsonplaceholder.typicode.com/users/').json()
-    names = [name.get("name") for name in response]
+    names = [name.get("username") for name in response]
     res = requests.get(
         'https://jsonplaceholder.typicode.com/todos').json()
     new_json = {
