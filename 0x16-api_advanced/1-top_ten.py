@@ -8,7 +8,7 @@ import requests
 
 def top_ten(subreddit):
     """ Prints the top ten hot posts of a subreddit """
-    reddit_api = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    reddit_api = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'

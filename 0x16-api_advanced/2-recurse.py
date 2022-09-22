@@ -7,7 +7,7 @@ import requests
 
 def recurse(subreddit, hot_list=[], after=None):
     """ Returns a list of all posts of a subreddit """
-    reddit_api = f"https://www.reddit.com/r/{subreddit}/hot.json"
+    reddit_api = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
 
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)'
@@ -26,13 +26,10 @@ def recurse(subreddit, hot_list=[], after=None):
 
     posts = response.json().get('data').get('children')
 
-    if not posts:
-        return None
-
     posts = hot_list + [post.get('data').get('title') for post in posts]
 
     after = response.json().get('data').get('after')
 
     if after is not None:
-        return recurse(subreddit, hot_list, after)
-    return hot_list
+        return recurse(subreddit, posts, after)
+    return posts
